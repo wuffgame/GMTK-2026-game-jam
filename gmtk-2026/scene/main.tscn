@@ -40,6 +40,9 @@
 [ext_resource type="Texture2D" uid="uid://fmj0cr2kbkeh" path="res://assets/bomb and city/bomb/bomb20.png" id="38_vvbx3"]
 [ext_resource type="Texture2D" uid="uid://enc4akhuj56u" path="res://assets/bars/hpbar2.png" id="39_uuhkg"]
 [ext_resource type="Texture2D" uid="uid://n50vuysshp1b" path="res://assets/coin/coin-Sheet.png" id="40_vc5kc"]
+[ext_resource type="Texture2D" uid="uid://cwjuk0ym7ss4n" path="res://assets/bomb and city/7.png" id="41_2km5d"]
+[ext_resource type="Texture2D" uid="uid://cnu5tnw3gkg20" path="res://assets/bomb and city/8.png" id="42_rhsrv"]
+[ext_resource type="Texture2D" uid="uid://wyc1pk05hrpv" path="res://assets/bars/hpbar2-export.png" id="43_abiby"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6vxf"]
 font = ExtResource("3_vc5kc")
@@ -227,6 +230,51 @@ font = ExtResource("3_vc5kc")
 font_size = 27
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ojblr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jey2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_2km5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_rhsrv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmovl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_abiby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_uuhkg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhuev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_abiby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_uuhkg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D" unique_id=230596585]
 
 [node name="background" type="Sprite2D" parent="." unique_id=669052456]
@@ -238,11 +286,6 @@ texture = ExtResource("1_itxqv")
 position = Vector2(533, 291)
 zoom = Vector2(1.54, 1.54)
 
-[node name="city" type="Sprite2D" parent="." unique_id=868492225]
-position = Vector2(532, 417)
-scale = Vector2(0.50617284, 0.50617284)
-texture = ExtResource("2_jey2d")
-
 [node name="counter" type="Label" parent="." unique_id=667845899]
 offset_left = 495.0
 offset_top = 106.0
@@ -253,12 +296,14 @@ label_settings = SubResource("LabelSettings_a6vxf")
 horizontal_alignment = 1
 
 [node name="EXPLOSION" type="AnimatedSprite2D" parent="." unique_id=1652206552]
+z_index = 1
 position = Vector2(537, 367)
 sprite_frames = SubResource("SpriteFrames_a6vxf")
-frame = 16
-frame_progress = 0.5569407
+frame = 7
+frame_progress = 0.42038548
 
 [node name="bomb" type="AnimatedSprite2D" parent="." unique_id=778814731]
+visible = false
 position = Vector2(538, 254)
 scale = Vector2(0.13867188, 0.13867188)
 sprite_frames = SubResource("SpriteFrames_f4icu")
@@ -281,3 +326,20 @@ offset_bottom = 18.0
 text = "2137"
 label_settings = SubResource("LabelSettings_f4icu")
 horizontal_alignment = 1
+
+[node name="city" type="AnimatedSprite2D" parent="." unique_id=1549534155]
+position = Vector2(533, 417.25)
+scale = Vector2(0.5046297, 0.5046297)
+sprite_frames = SubResource("SpriteFrames_ojblr")
+
+[node name="coin upgrade" type="AnimatedSprite2D" parent="." unique_id=1821083543]
+position = Vector2(236, 275.00003)
+scale = Vector2(0.66666675, 0.9375)
+sprite_frames = SubResource("SpriteFrames_tmovl")
+
+[node name="time upgrade" type="AnimatedSprite2D" parent="." unique_id=1057045378]
+position = Vector2(234.99998, 216)
+scale = Vector2(0.6579167, 0.96875036)
+sprite_frames = SubResource("SpriteFrames_qhuev")
+frame = 1
+frame_progress = 0.15311974
