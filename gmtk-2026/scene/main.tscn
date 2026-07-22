@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bxsum6mtaw1af"]
+
+[ext_resource type="Texture2D" uid="uid://da7evk6h7e14k" path="res://assets/background/pastel white.png" id="1_itxqv"]
+
+[node name="Node2D" type="Node2D" unique_id=230596585]
+
+[node name="background" type="Sprite2D" parent="." unique_id=669052456]
+position = Vector2(527, 298)
+scale = Vector2(0.54814816, 0.54814816)
+texture = ExtResource("1_itxqv")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1368586831]
+position = Vector2(533, 291)
+zoom = Vector2(1.54, 1.54)
