@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
@@ -37,3 +37,4 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+2d/snap/snap_2d_transforms_to_pixel=true

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://da7evk6h7e14k" path="res://assets/background/pastel white.png" id="1_itxqv"]
 [ext_resource type="Texture2D" uid="uid://cykht1glriya8" path="res://assets/bomb and city/6.png" id="2_jey2d"]
-[ext_resource type="FontFile" uid="uid://b30tqpfwnku3n" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_vc5kc"]
+[ext_resource type="FontFile" uid="uid://b30tqpfwnku3n" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="3_vc5kc"]
 [ext_resource type="Texture2D" uid="uid://8qmckcuygo0v" path="res://assets/bomb and city/explosion/Explosion2.png" id="4_cv4lv"]
 [ext_resource type="Texture2D" uid="uid://2oqyb5ljrbgx" path="res://assets/bomb and city/explosion/Explosion3.png" id="5_fyltn"]
 [ext_resource type="Texture2D" uid="uid://byiiqwsiat7ci" path="res://assets/bomb and city/explosion/Explosion4.png" id="6_2km5d"]
@@ -42,11 +42,15 @@
 [ext_resource type="Texture2D" uid="uid://n50vuysshp1b" path="res://assets/coin/coin-Sheet.png" id="40_vc5kc"]
 [ext_resource type="Texture2D" uid="uid://cwjuk0ym7ss4n" path="res://assets/bomb and city/7.png" id="41_2km5d"]
 [ext_resource type="Texture2D" uid="uid://cnu5tnw3gkg20" path="res://assets/bomb and city/8.png" id="42_rhsrv"]
-[ext_resource type="Texture2D" uid="uid://wyc1pk05hrpv" path="res://assets/bars/hpbar2-export.png" id="43_abiby"]
+[ext_resource type="Texture2D" uid="uid://blyha0gqewd22" path="res://assets/upgrades/frame_0_delay-0.1s.png" id="43_rhsrv"]
+[ext_resource type="Texture2D" uid="uid://dwhge1mh0oo72" path="res://assets/upgrades/frame_1_delay-0.1s.png" id="44_abiby"]
+[ext_resource type="Texture2D" uid="uid://ckj6ylk2gqgsf" path="res://assets/coin/coin3.png" id="45_mbros"]
+[ext_resource type="Texture2D" uid="uid://dbstff733ljfm" path="res://assets/timer/Clock.png" id="46_76meg"]
+[ext_resource type="LabelSettings" uid="uid://djm5mgkex7vr2" path="res://assets/label/new_label_settings.tres" id="46_ntge4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6vxf"]
 font = ExtResource("3_vc5kc")
-font_size = 79
+font_size = 106
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a6vxf"]
@@ -227,7 +231,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_f4icu"]
 font = ExtResource("3_vc5kc")
-font_size = 27
+font_size = 31
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ojblr"]
@@ -251,10 +255,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("43_abiby")
+"texture": ExtResource("43_rhsrv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_uuhkg")
+"texture": ExtResource("44_abiby")
 }],
 "loop": 1,
 "name": &"default",
@@ -265,10 +269,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("43_abiby")
+"texture": ExtResource("43_rhsrv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_uuhkg")
+"texture": ExtResource("44_abiby")
 }],
 "loop": 1,
 "name": &"default",
@@ -284,20 +288,21 @@ texture = ExtResource("1_itxqv")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1368586831]
 position = Vector2(533, 291)
-zoom = Vector2(1.54, 1.54)
+zoom = Vector2(1.14, 1.14)
 
 [node name="counter" type="Label" parent="." unique_id=667845899]
-offset_left = 495.0
-offset_top = 106.0
-offset_right = 578.0
-offset_bottom = 213.0
+offset_left = 483.0
+offset_top = 76.0
+offset_right = 588.0
+offset_bottom = 204.0
 text = "10"
 label_settings = SubResource("LabelSettings_a6vxf")
 horizontal_alignment = 1
 
 [node name="EXPLOSION" type="AnimatedSprite2D" parent="." unique_id=1652206552]
 z_index = 1
-position = Vector2(537, 367)
+position = Vector2(536, 405)
+scale = Vector2(1.265625, 1.265625)
 sprite_frames = SubResource("SpriteFrames_a6vxf")
 frame = 7
 frame_progress = 0.42038548
@@ -309,7 +314,7 @@ scale = Vector2(0.13867188, 0.13867188)
 sprite_frames = SubResource("SpriteFrames_f4icu")
 
 [node name="coinbar" type="Sprite2D" parent="." unique_id=1913314792]
-position = Vector2(799, 111)
+position = Vector2(930, 37)
 texture = ExtResource("39_uuhkg")
 
 [node name="coin" type="AnimatedSprite2D" parent="coinbar" unique_id=655129983]
@@ -320,26 +325,53 @@ autoplay = "default"
 
 [node name="Label" type="Label" parent="coinbar" unique_id=1905186609]
 offset_left = -61.0
-offset_top = -15.0
+offset_top = -18.0
 offset_right = 87.0
-offset_bottom = 18.0
+offset_bottom = 20.0
 text = "2137"
 label_settings = SubResource("LabelSettings_f4icu")
 horizontal_alignment = 1
 
 [node name="city" type="AnimatedSprite2D" parent="." unique_id=1549534155]
-position = Vector2(533, 417.25)
-scale = Vector2(0.5046297, 0.5046297)
+position = Vector2(532, 453.99997)
+scale = Vector2(0.7361113, 0.7361113)
 sprite_frames = SubResource("SpriteFrames_ojblr")
 
 [node name="coin upgrade" type="AnimatedSprite2D" parent="." unique_id=1821083543]
-position = Vector2(236, 275.00003)
-scale = Vector2(0.66666675, 0.9375)
+position = Vector2(123.17853, 189.38281)
+scale = Vector2(2.5054092, 3.249526)
 sprite_frames = SubResource("SpriteFrames_tmovl")
 
+[node name="coin" type="Sprite2D" parent="coin upgrade" unique_id=226049054]
+position = Vector2(-19.363638, 0.84109926)
+scale = Vector2(1.267045, 1)
+texture = ExtResource("45_mbros")
+
+[node name="Label" type="Label" parent="coin upgrade" unique_id=1631243136]
+offset_left = -10.448803
+offset_top = -12.735029
+offset_right = 29.551197
+offset_bottom = 14.264971
+text = "1 lvl
+230 coin"
+label_settings = ExtResource("46_ntge4")
+
 [node name="time upgrade" type="AnimatedSprite2D" parent="." unique_id=1057045378]
-position = Vector2(234.99998, 216)
-scale = Vector2(0.6579167, 0.96875036)
+position = Vector2(122.79674, 302.2539)
+scale = Vector2(2.5078535, 3.1361272)
 sprite_frames = SubResource("SpriteFrames_qhuev")
-frame = 1
 frame_progress = 0.15311974
+
+[node name="timer" type="Sprite2D" parent="time upgrade" unique_id=586584147]
+position = Vector2(-18.711721, 0.440094)
+scale = Vector2(0.025616344, 0.02076529)
+texture = ExtResource("46_76meg")
+
+[node name="Label" type="Label" parent="time upgrade" unique_id=623007394]
+offset_left = -9.488887
+offset_top = -13.792142
+offset_right = 29.511112
+offset_bottom = 15.207858
+text = "1 lvl
+230 coin"
+label_settings = ExtResource("46_ntge4")
