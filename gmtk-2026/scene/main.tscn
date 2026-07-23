@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxsum6mtaw1af"]
 
 [ext_resource type="Texture2D" uid="uid://da7evk6h7e14k" path="res://assets/background/pastel white.png" id="1_itxqv"]
+[ext_resource type="Script" uid="uid://cwatjykm25vik" path="res://scene/main.gd" id="1_ntge4"]
 [ext_resource type="Texture2D" uid="uid://cykht1glriya8" path="res://assets/bomb and city/6.png" id="2_jey2d"]
 [ext_resource type="FontFile" uid="uid://b30tqpfwnku3n" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="3_vc5kc"]
 [ext_resource type="Texture2D" uid="uid://8qmckcuygo0v" path="res://assets/bomb and city/explosion/Explosion2.png" id="4_cv4lv"]
@@ -107,7 +108,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_ycj0v")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -280,6 +281,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=230596585]
+script = ExtResource("1_ntge4")
 
 [node name="background" type="Sprite2D" parent="." unique_id=669052456]
 position = Vector2(533, 291.00003)
@@ -291,21 +293,22 @@ position = Vector2(533, 291)
 zoom = Vector2(1.14, 1.14)
 
 [node name="counter" type="Label" parent="." unique_id=667845899]
-offset_left = 483.0
-offset_top = 76.0
-offset_right = 588.0
-offset_bottom = 204.0
-text = "10"
+offset_left = 410.0
+offset_top = 61.0
+offset_right = 663.0
+offset_bottom = 189.0
+text = "10.00"
 label_settings = SubResource("LabelSettings_a6vxf")
 horizontal_alignment = 1
 
 [node name="EXPLOSION" type="AnimatedSprite2D" parent="." unique_id=1652206552]
+visible = false
 z_index = 1
 position = Vector2(536, 405)
 scale = Vector2(1.265625, 1.265625)
 sprite_frames = SubResource("SpriteFrames_a6vxf")
-frame = 7
-frame_progress = 0.42038548
+frame = 16
+frame_progress = 1.0
 
 [node name="bomb" type="AnimatedSprite2D" parent="." unique_id=778814731]
 visible = false
